@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Flip</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <center>
+    <p class="title">Coin Flip Game</p>
+
+    <button onclick="
+      playGame('head');
+    " class="btn">Head</button>
+
+    <button onclick="
+      playGame('tail');
+    " class="btn">Tail</button>
+
+    <p class="js-result  result"></p>
+    <p class="js-your-choice  yourChoice"></p>
+    <p class="js-score  score"></p>
+
+    <button onclick="
+      score.win = 0;
+      score.lose = 0;
+      localStorage.removeItem(score);
+      updateScore();
+      
+      //to remove the result and choices
+      document.querySelector('.js-your-choice').innerHTML = null;
+      document.querySelector('.js-result').innerHTML = null;
+      document.querySelector('js-reSet').classList.add('reSett');
+    " class="js-reSet  reSet">Reset Score</button>
+  </center>
+
+  
+  <script src="JS/script.js"></script>
+</body>
+</html>
